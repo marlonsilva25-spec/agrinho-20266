@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Rotação de Culturas | Agrinho 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="badge">Agrinho 2026</span>
+                <h1>Agro Forte, Futuro Sustentável</h1>
+                <p class="subtitle">Equilíbrio entre produção e meio ambiente</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-card">
+            <h2>O que é Rotação de Culturas?</h2>
+            <p>A rotação de culturas é uma prática agrícola sustentável que consiste em alternar espécies vegetais em uma mesma área ao longo do tempo. Isso melhora as características físicas e biológicas do solo, auxilia no controle de pragas e doenças, repõe nutrientes de forma natural e reduz a necessidade de fertilizantes químicos.</p>
+        </section>
+
+        <div class="simulator-grid">
+            <section class="panel input-panel">
+                <h2>1. Configure sua Simulação</h2>
+                
+                <div class="form-group">
+                    <label for="cultura-atual">Cultura Principal (Atual):</label>
+                    <select id="cultura-atual">
+                        <option value="soja">Soja (Leguminosa - Fixa Nitrogênio)</option>
+                        <option value="milho">Milho (Gramínea - Alta Palhada)</option>
+                        <option value="trigo">Trigo (Cereal de Inverno)</option>
+                        <option value="algodao">Algodão (Fibra - Alta Exigência)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tamanho-area">Tamanho da Área (Hectares):</label>
+                    <input type="number" id="tamanho-area" value="50" min="1" max="10000">
+                </div>
+
+                <div class="form-group">
+                    <label for="historico-solo">Condição Atual do Solo:</label>
+                    <select id="historico-solo">
+                        <option value="bom">Excelente (Nutrientes Equilibrados)</option>
+                        <option value="medio">Moderado (Levemente Desgastado)</option>
+                        <option value="esgotado">Degradado/Esgotado (Necessita Recuperação)</option>
+                    </select>
+                </div>
+
+                <button id="btn-simular" class="btn-primary">Calcular Plano Sustentável</button>
+            </section>
+
+            <section class="panel result-panel" id="resultado-container">
+                <h2>2. Diagnóstico e Indicadores</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-box">
+                        <span class="metric-label">Saúde do Solo</span>
+                        <div class="progress-bar-container">
+                            <div id="progresso-solo" class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                        <span id="texto-status-solo" class="metric-value">Aguardando...</span>
+                    </div>
+                    
+                    <div class="metric-box">
+                        <span class="metric-label">Impacto Ambiental</span>
+                        <span id="score-ambiental" class="badge-score text-neutral">-</span>
+                    </div>
+                </div>
+
+                <div class="alert-box" id="alerta-dica">
+                    Selecione os dados ao lado para gerar o plano de rotação ideal para a sua propriedade.
+                </div>
+            </section>
+        </div>
+
+        <section class="panel calendar-panel" id="calendario-section">
+            <h2>3. Cronograma de Rotação de Culturas Sugerido (4 Estações)</h2>
+            <p class="calendar-desc">Veja abaixo a sequência recomendada para manter o solo produtivo e o ecossistema em equilíbrio:</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon phase-1">1</div>
+                    <div class="timeline-content">
+                        <span class="season-tag">Safra Principal (Verão Ano 1)</span>
+                        <h3 id="cal-title-1">Cultura Inicial</h3>
+                        <p id="cal-desc-1">Aguardando simulação...</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon phase-2">2</div>
+                    <div class="timeline-content">
+                        <span class="season-tag">Safrinha / Outono</span>
+                        <h3 id="cal-title-2">Próxima Cultura</h3>
+                        <p id="cal-desc-2">Aguardando simulação...</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon phase-3">3</div>
+                    <div class="timeline-content">
+                        <span class="season-tag">Inverno (Cobertura de Solo)</span>
+                        <h3 id="cal-title-3">Cultura de Cobertura</h3>
+                        <p id="cal-desc-3">Aguardando simulação...</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon phase-4">4</div>
+                    <div class="timeline-content">
+                        <span class="season-tag">Verão Ano 2 (Retorno Sustentável)</span>
+                        <h3 id="cal-title-4">Reinício do Ciclo</h3>
+                        <p id="cal-desc-4">Aguardando simulação...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 - Projeto Desenvolvido para o Concurso Agrinho 2026</p>
+            <p class="mote">"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
